@@ -8,7 +8,7 @@ var checkLogedIn = (req, res, next) => {
 
 var checkLogedOut = (req, res, next) => {
     var { user } = req.session;
-    if(req.session.user){
+    if(user){
         return res.redirect("/");
     };
     next();

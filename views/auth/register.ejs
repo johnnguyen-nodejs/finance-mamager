@@ -1,0 +1,38 @@
+<%- include('./../layouts/header');-%>
+<div class="main">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <a href="/" class="btn btn-success">Home</a>
+            <a href="/login" class="btn btn-success">Login</a>
+            <a href="/register" class="btn btn-outline-success">Register</a>
+        </div>
+        <div class="wallet-content">
+            <div class="wallet-image">
+                <img class="wallet-img" src="./../images/form-img.jpg" alt="wallet Image">
+            </div>
+            <div class="wallet-form">
+                <form id="wallet-form" action="/register" method="post">
+                    <h2>Veryfy Account</h2>
+                    <div class="form-group form-input">
+                        <input type="email" name="email" id="name" value="" required/>
+                        <label for="name" class="form-label">Your Email</label>
+                    </div>
+                    <div class="form-group form-input">
+                        <input type="password" name="password" id="phone" value="" required />
+                        <label for="phone" class="form-label">Your Password</label>
+                    </div>
+                    <div class="form-group form-input">
+                        <input type="password" name="password2" id="job" value="" required />
+                        <label for="phone" class="form-label">Re-Password</label>
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" value="Verify" class="submit" id="submit"/>
+                    </div>
+                    <p class="text-white">You have an account? <a href="/login">Login Now</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<%- include('./../layouts/footer');-%>
