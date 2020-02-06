@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const connectDB = require('./config/connectDB');
 const initRouter = require('./routes/index');
+const {configSession} = require('./config/session');
 const app = express();
 
 // init view
@@ -16,6 +17,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 //connect DB
 connectDB();
+//sessions
+configSession(app);
 //init routes
 initRouter(app);
 const port = process.env.PORT || 3000;

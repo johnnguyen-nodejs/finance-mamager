@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./../style.css" />
   </head>
   <body>
+    <% if(user){ %>
     <header class="page-header">
       <input id="menu-toggle-input" type="checkbox" />
       <label class="menu-toggle" for="menu-toggle-input">
@@ -26,16 +27,25 @@
       </label>
       <nav class="menu">
         <ol>
-          <li class="menu-item"><a href="#0">Tổng Tài Sản</a></li>
-          <li class="menu-item"><a href="#0">Quỹ Tiêu Dùng</a></li>
           <li class="menu-item">
-            <a href="#0">Quỹ Đầu Tư</a>
-            <ol class="sub-menu">
-              <li class="menu-item"><a href="#0">Quỹ Đầu Tư Cá Nhân</a></li>
-              <li class="menu-item"><a href="#0">Quỹ Đầu Tư Nhàn Rỗi</a></li>
-              <li class="menu-item"><a href="#0">Quỹ Dự Phòng</a></li>
-            </ol>
+            <a href="#0">Tổng Tài Sản<br><%= user.assets.total %> VND</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Quỹ Tiêu Dùng<br><%= user.assets.nec.total %> VND</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Quỹ tiết Kiệm<br><%= user.assets.ltss.total %> VND</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Quỹ Giáo Dục<br><%= user.assets.edu.total %> VND</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Quỹ Giải Trí<br><%= user.assets.play.total %> VND</a>
+          </li>
+          <li class="menu-item">
+            <a href="#0">Quỹ Đầu Tư<br><%= user.assets.ffa.total %> VND</a>
           </li>
         </ol>
       </nav>
     </header>
+    <% } %>

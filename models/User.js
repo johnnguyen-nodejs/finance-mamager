@@ -12,8 +12,73 @@ var UserSchema = new mongoose.Schema({
     },
     username: String,
     assets: {
-        type: Number,
-        default: null
+        total: {type: Number},
+        pre_total: Number,
+        own: {
+            total: Number,
+            detail: [
+                {
+                    title: String,
+                    typeOwn: String,
+                    total: Number
+                }
+            ]
+        },
+        ltss: {
+            total: {type: Number},
+            detail: [
+                {
+                    total: Number,
+                    month: Date
+                }
+            ]
+        },
+        play: {
+            total: Number,
+            spend: Number,
+            detail: [
+                {
+                    title: String,
+                    total: Number,
+                    month: Date
+                }
+            ]
+        },
+        edu: {
+            total: Number,
+            spend: Number,
+            detail: [
+                {
+                    title: String,
+                    total: Number,
+                    month: Date
+                }
+            ]
+        },
+        nec: {
+            total: Number,
+            spend: Number,
+            detail: [
+                {
+                    title: String,
+                    total: Number,
+                    day: Date,
+                    month: Date,
+                    year: Date
+                }
+            ]
+        },
+        ffa: {
+            total: Number,
+            profit: Number,
+            detail: [
+                {
+                    title: String,
+                    total: Number,
+                    month: Date
+                }
+            ]
+        },
     },
     job: {
         type: String,

@@ -1,14 +1,14 @@
 var checkLogedIn = (req, res, next) => {
-    var { user } = req.session;
-    if(!user){
+    var sess = req.session;
+    if(!sess.user){
         return res.redirect("/login");
     };
     next();
 };
 
 var checkLogedOut = (req, res, next) => {
-    var { user } = req.session;
-    if(user){
+    var sess = req.session;
+    if(sess.user){
         return res.redirect("/");
     };
     next();
